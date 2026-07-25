@@ -1,296 +1,220 @@
 // ============================================================
-// portfolioData.js — Centralized configuration for Md Yusuf's Portfolio
+// portfolioData.js — Centralized configuration for Lotfi Djebbar's Portfolio
 // All external links, personal info, and content in one place.
 // Update this file to change any content across the entire site.
 // ============================================================
 
 export const personalInfo = {
-  name: "Md Yusuf",
-  firstName: "Md Yusuf",
-  brandName: "Md Yusuf",
-  title: "Full Stack & Java Developer",
-  location: "Bhopal, India",
-  phone: "+91 99396-08743",
+  name: "Lotfi Djebbar",
+  firstName: "Lotfi",
+  brandName: "Lotfi Djebbar",
+  title: "Data Science & AI Engineer",
+  location: "Algiers, Algeria",
+  phone: "+213 550 45 77 47",
   emails: {
-    primary: "mdyusufcse096@iesuniversity.ac.in",
-    secondary: "yusuf.rgpv@gmail.com",
+    primary: "lotfi.djebbar@g.enp.edu.dz",
+    secondary: "lotfi.djebbar2003@gmail.com",
   },
   summary:
-    "Aspiring software engineer and motivated B.Tech Computer Science student with solid skills in Java, Spring Boot, React, and Python. Passionate about building scalable full-stack applications with clean architecture and modern tech stacks.",
-  resumeUrl: "/Md_Yusuf_Resume_2026.pdf",
+    "Final-year Data Science & AI engineering student at École Nationale Polytechnique d'Alger, specialized in NLP, multi-agent systems, and production data solutions. Built and deployed a multi-agent RAG system for natural-language ERP querying, and authored a from-scratch Transformer encoder for Algerian dialect sentiment classification. Seeking a 5-6 month graduation internship (PFE) starting February 2027 in data & AI solutions.",
+  resumeUrl: "/Lotfi_Djebbar_Resume.pdf",
 };
 
 export const socialLinks = {
-  github: "https://github.com/mdyusuf0",
-  linkedin: "https://linkedin.com/in/mdyusuf0",
-  instagram: "https://instagram.com/heyyusuffff",
+  github: "https://github.com/LotfiDjebbar",
+  linkedin: "https://linkedin.com/in/lotfi-djebbar",
 };
 
 export const heroContent = {
-  greeting: "Hi, I'm Md Yusuf",
-  titleHighlight: "Full Stack & Java Developer",
+  greeting: "Hi, I'm Lotfi Djebbar",
+  titleHighlight: "Data Science & AI Engineer",
   subtitle:
-    "I build fast, scalable applications using Java, Spring Boot, MERN Stack, and Python.",
+    "I build NLP systems, multi-agent RAG pipelines, and data-driven applications using Python, PyTorch, and LangChain.",
   ctaPrimary: { text: "View My Work", href: "#projects" },
   ctaSecondary: {
     text: "Contact Me",
-    href: "mailto:mdyusufcse096@iesuniversity.ac.in?subject=Hiring Inquiry – Portfolio&body=Hello Md Yusuf,%0D%0A%0D%0AI came across your portfolio and would like to discuss an opportunity with you.%0D%0A%0D%0ALooking forward to hearing from you.%0D%0ABest Regards,",
+    href: "mailto:lotfi.djebbar@g.enp.edu.dz?subject=Hiring Inquiry – Portfolio&body=Hello Lotfi,%0D%0A%0D%0AI came across your portfolio and would like to discuss an opportunity with you.%0D%0A%0D%0ALooking forward to hearing from you.%0D%0ABest Regards,",
   },
-  ctaResume: { text: "Download Resume", href: "/Md_Yusuf_Resume_2026.pdf" },
+  ctaResume: { text: "Download Resume", href: "/Lotfi_Djebbar_Resume.pdf" },
 };
 
 export const aboutContent = {
   heading: "Hello!",
-  bio: `Hi, my name is <span class="text-black text-xl font-black mx-1 tracking-wide uppercase">Md Yusuf</span>, an aspiring software engineer based in Bhopal, India, dedicated to crafting clean, functional, and highly scalable full-stack applications.`,
-  techStack: ["Java", "Spring Boot", "MERN Stack"],
+  bio: `Hi, my name is <span class="text-black text-xl font-black mx-1 tracking-wide uppercase">Lotfi Djebbar</span>, a final-year Data Science & AI engineering student at ENP Algiers, dedicated to building production-grade NLP systems, multi-agent pipelines, and rigorous, research-driven AI solutions.`,
+  techStack: ["Python", "PyTorch", "LangChain"],
 };
 
 export const skillsContent = {
   badge: "My Process",
-  heading: "Here's how I turn ideas into real-world applications",
+  heading: "Here's how I turn ideas into real-world AI systems",
   description:
-    "I follow a structured, creative, and highly technical approach to turn ideas into robust full-stack applications.",
+    "I follow a structured, research-driven, and highly technical approach to turn ideas into robust, production-ready AI applications.",
   cards: [
     {
       number: "01",
       title: "Research",
-      text: "I start by understanding goals, user requirements, and technical constraints to lay a rock-solid foundation for the project.",
+      text: "I start by auditing data, understanding requirements, and validating assumptions before writing a single line of model code.",
     },
     {
       number: "02",
       title: "Design",
-      text: "Crafting clean architecture, intuitive interfaces, and pixel-perfect wireframes that guarantee an engaging and accessible user experience.",
+      text: "Designing clean pipeline architecture — from data ingestion to model serving — with reproducibility and rigor in mind.",
     },
     {
       number: "03",
       title: "Develop",
-      text: "Building scalable backends and responsive frontends using modern tech stacks and best practices.",
+      text: "Building models and multi-agent systems from first principles, benchmarking rigorously against established baselines.",
     },
     {
       number: "04",
       title: "Deploy",
-      text: "Rigorous testing, performance optimization, and seamless deployment to cloud infrastructure, followed by ongoing support.",
+      text: "Shipping to production with real performance metrics, thorough documentation, and ongoing monitoring.",
     },
   ],
   endText: "Ready to ship!",
 };
 
-// Brand New Technical Skills Data
+// Technical Skills Data
 export const technicalSkills = {
   categories: [
     {
-      title: "Programming Languages",
+      title: "AI / NLP",
       skills: [
-        { name: "Java", level: 90 },
-        { name: "C++", level: 85 },
-        { name: "Python", level: 75 }
+        { name: "PyTorch", level: 85 },
+        { name: "Transformers & Attention", level: 82 },
+        { name: "LangChain", level: 82 },
+        { name: "CrewAI", level: 80 },
+        { name: "RAG Systems", level: 85 },
+        { name: "scikit-learn", level: 78 }
       ]
     },
     {
-      title: "Full Stack",
+      title: "Languages",
       skills: [
-        { name: "MERN Stack", level: 90 },
-        { name: "HTML", level: 95 },
-        { name: "CSS", level: 90 },
-        { name: "JavaScript", level: 92 }
+        { name: "Python", level: 90 },
+        { name: "C++", level: 80 },
+        { name: "SQL", level: 82 },
+        { name: "C", level: 75 },
+        { name: "JavaScript / HTML / CSS", level: 70 },
+        { name: "MATLAB", level: 65 }
       ]
     },
     {
-      title: "Backend",
+      title: "Data & Backend",
       skills: [
-        { name: "Spring Boot", level: 88 },
-        { name: "FastAPI", level: 75 },
-        { name: "REST APIs", level: 90 }
+        { name: "PostgreSQL", level: 82 },
+        { name: "pgvector", level: 78 },
+        { name: "Power BI", level: 75 },
+        { name: "Excel", level: 80 }
       ]
     },
     {
-      title: "Databases",
+      title: "Tools & Platforms",
       skills: [
-        { name: "MongoDB", level: 88 },
-        { name: "MySQL", level: 85 },
-        { name: "Firebase", level: 80 }
-      ]
-    },
-    {
-      title: "Tools & Automation",
-      skills: [
-        { name: "Git & GitHub", level: 90 },
-        { name: "VS Code", level: 95 },
-        { name: "Postman", level: 88 },
-        { name: "n8n", level: 82 },
-        { name: "MongoDB Compass", level: 85 },
-        { name: "Antigravity", level: 80 },
-        { name: "Codex", level: 75 }
-      ]
-    },
-    {
-      title: "Computer Science Concepts",
-      skills: [
-        { name: "Data Structures", level: 88 },
-        { name: "Algorithms", level: 85 },
-        { name: "DBMS", level: 86 },
-        { name: "OOP", level: 90 },
-        { name: "Software Engineering", level: 84 }
+        { name: "Git & GitHub", level: 88 },
+        { name: "Linux", level: 78 },
+        { name: "LaTeX", level: 82 },
+        { name: "Ollama", level: 78 },
+        { name: "Odoo 18", level: 70 }
       ]
     }
   ]
 };
 
-// Brand New Content Creation Data
-export const contentCreation = {
-  badge: "Cinematic Content",
-  heading: "Creative Direction & Cinematic Edits",
-  description: "Beyond coding, I craft visual stories with premium editing, color grading, and creative pacing.",
-  categories: [
-    {
-      title: "Cinematic Reels",
-      description: "Visual stories crafted with cinematic lighting, premium color grading, and high-impact sound design.",
-      stats: "50+ Reels Created",
-      icon: "🎥"
-    },
-    {
-      title: "Travel Videos",
-      description: "Immersive travel vlogs and aesthetic edits capturing cultures, landscapes, and visual rhythms.",
-      stats: "15+ Countries/Cities",
-      icon: "✈️"
-    },
-    {
-      title: "Educational Reels",
-      description: "Fast-paced tech tutorials and educational content designed to simplify coding and software engineering.",
-      stats: "100k+ Views",
-      icon: "🧠"
-    },
-    {
-      title: "My Own Creative Edits",
-      description: "Experimental transitions, 3D overlays, and trendsetting visual effects that push creative bounds.",
-      stats: "Personal Projects",
-      icon: "⚡"
-    }
-  ]
-};
-
-// Brand New Leadership Data
+// Leadership Data
 export const leadershipList = [
   {
-    title: "IEEE Madhya Pradesh Section (Social Media Team)",
-    description: "Managed and coordinated digital content, driving audience engagement and designing interactive visual campaigns for tech events.",
-    role: "Social Media Coordinator",
-    badge: "Volunteer"
-  },
-  {
-    title: "Team Coordinator – Go-Kart International Racing 2K25",
-    description: "Led multi-disciplinary teams in project management, budget control, and logistics coordination for a high-profile international racing event.",
-    role: "Team Coordinator",
+    title: "IEC & VIC Student Clubs (ENPA)",
+    description: "Communication & HR role; organizer of the Business Game and the Algerian Engineering Competition, coordinating logistics and cross-team communication.",
+    role: "Communication & HR",
     badge: "Leadership"
   },
   {
-    title: "5-Day MOE IDE Bootcamp, Roorkee",
-    description: "Participated in an intensive Innovation, Design, and Entrepreneurship Bootcamp organized by the Ministry of Education at IIT Roorkee.",
-    role: "Bootcamp Graduate",
-    badge: "Innovation"
-  },
-  {
-    title: "Hosted INFORIA Tech Summit Hackathon",
-    description: "Organized and hosted the flagship hackathon, managing registrations, mentoring participant teams, and coordinating judge evaluations.",
-    role: "Hackathon Organizer",
-    badge: "Co-Curricular"
-  },
-  {
-    title: "Event Coordinator & Anchoring – INFORIA 2K25",
-    description: "Coordinated technical events and served as the main stage anchor, speaking in front of large crowds and managing the summit flow.",
-    role: "Stage Anchor & Coordinator",
-    badge: "Public Speaking"
+    title: "COIL International Program — Foundations of NLP",
+    description: "Certificate of Distinction earned in a 30-hour collaborative program spanning five partner universities: Taras Shevchenko National University of Kyiv, Georgia State University, University of Central Arkansas, Karunya Institute of Technology, and ENP Algiers.",
+    role: "International Collaboration",
+    badge: "Academic"
   }
 ];
 
-// Brand New Internships Data
+// Internships / Experience Data
 export const internshipsList = [
   {
-    organization: "Netlink, Bhopal",
-    role: "Data Analytics & BI Tools Intern",
-    duration: "June 2025 - August 2025",
-    skills: ["Data Analytics", "Business Intelligence", "Dashboard Design", "Data Modeling"],
-    tech: ["Lumenore", "MySQL", "Excel", "BI Tools"]
+    organization: "CETELEX Technology (Odoo Silver Partner)",
+    role: "AI Engineer — Work-Study Program",
+    duration: "September 2025 - May 2026",
+    skills: ["Multi-Agent RAG Systems", "Production Deployment", "Semantic Search Pipelines", "Technical Documentation"],
+    tech: ["CrewAI", "LangChain", "Qwen2.5 / Ollama", "PostgreSQL", "pgvector", "Odoo 18"]
   },
   {
-    organization: "Canva",
-    role: "Visual Content Creator & Designer",
-    duration: "May 2024 - June 2024",
-    skills: ["Visual Designing", "Poster Design", "Team Branding", "Asset Creation"],
-    tech: ["Canva Pro", "Figma", "Canva Design Suite"]
-  },
-  {
-    organization: "CollegeTips.in",
-    role: "Web Development Intern",
-    duration: "1 Month (Offline)",
-    skills: ["Frontend Development", "Responsive Layouts", "API Testing", "Web Performance"],
-    tech: ["HTML5", "CSS3", "JavaScript", "Bootstrap"]
+    organization: "Hikma Pharma & Biscuiterie de Cherchell",
+    role: "Industrial Observation Internships",
+    duration: "January - June 2025",
+    skills: ["Information Systems", "Process Digitalization", "Supply Chain Analysis"],
+    tech: ["ERP Systems", "Process Mapping"]
   }
 ];
 
-// Brand New Soft Skills Data
+// Soft Skills Data
 export const softSkillsList = [
-  { name: "Leadership", icon: "👑", desc: "Guiding teams, managing tasks, and driving project completion with shared vision." },
-  { name: "Public Speaking", icon: "🎤", desc: "Confident stage presence, anchoring summits, and delivering articulate technical ideas." },
-  { name: "Team Collaboration", icon: "🤝", desc: "Collaborating across fields, building racing carts, and engineering code in sync." },
-  { name: "Communication", icon: "💬", desc: "Clear, concise, and structured interactions in both business and technical contexts." },
-  { name: "Problem Solving", icon: "🧩", desc: "Breaking down complex engineering tasks into clean, logical, and modular pieces." },
-  { name: "Adaptability", icon: "🌟", desc: "Quick to pick up new frameworks like FastAPI, Spring Boot, or automation tools like n8n." },
-  { name: "Creativity", icon: "🎨", desc: "Blending cinematic aesthetics with software structure to build premium experiences." },
-  { name: "Time Management", icon: "⏰", desc: "Balancing B.Tech studies, event hosting, and developing robust software platforms." }
+  { name: "Research & Writing", icon: "📝", desc: "Authoring rigorous technical reports — from a 40-page production RAG deliverable to a 4-page research-style NLP paper." },
+  { name: "Cross-Cultural Collaboration", icon: "🌍", desc: "Working across a 5-university international program spanning Ukraine, the US, India, and Algeria." },
+  { name: "Problem Solving", icon: "🧩", desc: "Auditing datasets, catching annotation errors, and rejecting flawed corpora before they compromise a model." },
+  { name: "Leadership", icon: "👑", desc: "Coordinating logistics and communication for large-scale student competitions and events." },
+  { name: "Adaptability", icon: "🌟", desc: "Moving fluidly between low-level model implementation and high-level agent orchestration frameworks." },
+  { name: "Communication", icon: "💬", desc: "Fluent in Arabic, French, and professional English; comfortable presenting technical work to varied audiences." },
+  { name: "Analytical Rigor", icon: "🔍", desc: "Quantitative auditing and manual re-annotation to validate results before trusting them." },
+  { name: "Time Management", icon: "⏰", desc: "Balancing a demanding engineering curriculum with a work-study role and independent research projects." }
 ];
 
 export const projects = [
   {
-    id: "foodmesh",
+    id: "cetelex-rag",
     number: "01",
-    badge: "🚀 Flagship Project",
-    title: "FoodMesh",
+    badge: "🚀 Production System",
+    title: "Multi-Agent RAG for Odoo ERP",
     description:
-      "FoodMesh — An enterprise-grade multi-tenant restaurant management and food ordering SaaS platform inspired by UrbanPiper. It enables restaurants to manage multiple outlets, menus, inventory, customers, staff, and orders through a scalable architecture with secure authentication, role-based access control, and real-time operations. Built with React, Next.js, NestJS, PostgreSQL, Redis, Kafka, Elasticsearch, Docker, Kubernetes, and AWS.",
-    techTags: [
-      "React",
-      "Next.js",
-      "NestJS",
-      "PostgreSQL",
-      "Redis",
-      "Kafka",
-      "Elasticsearch",
-      "Docker",
-      "Kubernetes",
-      "AWS",
-    ],
-    links: {
-      github: "https://github.com/ersamirsingh/UrbanPiper",
-      demo: null,
-    },
+      "Designed and deployed to production a multi-agent RAG system enabling natural-language querying of an Odoo 18 ERP at CETELEX Technology. Semantic matching pipeline (cosine similarity + threshold) routes queries between direct SQL template execution and LLM fallback (Qwen2.5 via Ollama), with vector storage via pgvector/PostgreSQL. Achieved 100% execution rate with P50 latency of 0.03s on a CPU-only production VPS.",
+    techTags: ["CrewAI", "LangChain", "Qwen2.5", "Ollama", "PostgreSQL", "pgvector", "Odoo 18"],
+    links: {},
     isFlagship: true,
   },
   {
-    id: "karigar",
+    id: "darija-transformer",
     number: "02",
     badge: null,
-    title: "Karigar",
+    title: "Darija Transformer",
     description:
-      "A platform connecting local skilled workers with customers, featuring real-time search, worker profiles, and booking management with full database integration.",
-    techTags: ["React", "Node.js", "MongoDB", "Express", "REST API"],
+      "A Transformer encoder implemented from scratch — multi-head attention, sinusoidal positional encoding, encoder blocks — without high-level libraries. Achieved 79.42% accuracy (F1 macro 0.794) on a code-switched Arabic/French/Arabizi sentiment corpus, including a quantitative audit of 3 candidate datasets and a rigorous comparison against fine-tuned DziriBERT (124M parameters).",
+    techTags: ["PyTorch", "Transformers", "NLP", "Custom BPE Tokenizer"],
     links: {
-      github: "https://github.com/mdyusuf0/Karigar",
-      frontendDemo: "https://karigar-frontend.onrender.com",
-      backendApi: "https://karigar-zny2.onrender.com",
+      github: "https://github.com/LotfiDjebbar/darija-transformer",
     },
     isFlagship: false,
   },
   {
-    id: "sentiment-analysis",
+    id: "quiz-generator",
     number: "03",
     badge: null,
-    title: "AI-Powered Sentiment Analysis",
+    title: "Automatic Quiz Generator from PDF Documents",
     description:
-      "A full-stack web application that analyzes citizen feedback using Artificial Intelligence to classify sentiments as positive, negative, or neutral. Features a responsive React frontend, a Node.js backend, MongoDB for data storage, and n8n automation for workflow orchestration — enabling real-time insights and efficient feedback management.",
-    techTags: ["React", "Node.js", "MongoDB", "n8n", "AI/ML", "REST API"],
+      "A question-generation tool that extracts and generates quizzes directly from PDF documents, benchmarking rule-based approaches against BERT, Flan-T5, and Gemini.",
+    techTags: ["NLP", "LLMs", "BERT", "Flan-T5", "Gemini"],
     links: {
-      github: "#", // Update when available
+      github: "https://github.com/LotfiDjebbar/quizz-generator",
+    },
+    isFlagship: false,
+  },
+  {
+    id: "agrodatainsight",
+    number: "04",
+    badge: "🏆 2nd Place",
+    title: "AgriDataInsight",
+    description:
+      "A data-driven solution for the agricultural sector, built under time constraints for Hackathon Algeria 2.0, placing 2nd overall.",
+    techTags: ["Data Science", "Python"],
+    links: {
+      github: "https://github.com/LotfiDjebbar/Agrovisor",
     },
     isFlagship: false,
   },
@@ -299,57 +223,46 @@ export const projects = [
 export const certificates = {
   featured: [
     {
-      name: "Oracle Cloud Infrastructure 2025",
-      issuer: "Oracle",
-      icon: "☁️",
+      name: "Foundations of NLP — COIL Certificate of Distinction",
+      issuer: "Taras Shevchenko Univ. Kyiv & Partners",
+      icon: "🧠",
     },
     {
-      name: "Programming in Java (94%)",
-      issuer: "NPTEL",
-      icon: "☕",
+      name: "Prompt Engineering with LLaMA-2",
+      issuer: "iXL Consulting",
+      icon: "🤖",
     },
     {
-      name: "C Programming & Assembly Language",
-      issuer: "NPTEL",
-      icon: "⚙️",
-    },
-    {
-      name: "Technology Job Simulation",
-      issuer: "Deloitte",
-      icon: "💼",
-    },
-    {
-      name: "Career Edge – IT Primer",
-      issuer: "TCS iON",
-      icon: "🎓",
-    },
-    {
-      name: "Fundamentals of BI & Analytics",
-      issuer: "Lumenore",
+      name: "AI Fundamentals",
+      issuer: "DataCamp",
       icon: "📊",
     },
+    {
+      name: "Project & Process Management",
+      issuer: "Coursera",
+      icon: "📋",
+    },
   ],
-  viewAllUrl:
-    "https://drive.google.com/file/d/1ObdGWtVSx8SsfR4AcbCySSd9LFXcAs9f/view?usp=sharing",
+  viewAllUrl: "https://linkedin.com/in/lotfi-djebbar",
 };
 
 export const education = {
-  degree: "B.Tech – Computer Science & Engineering",
-  institution: "IES College of Technology (RGPV)",
-  cgpa: "8.35",
-  graduation: "2027",
-  twelfth: "12th Science – 81%",
-  tenth: "10th CBSE – 70%",
+  degree: "State Engineering Degree — Industrial Engineering, Data Science & AI",
+  institution: "École Nationale Polytechnique d'Alger (ENPA)",
+  cgpa: "14.8/20 (S4)",
+  graduation: "2029",
+  twelfth: "Ranked 32nd of 330 — ENP Constantine Preparatory Classes",
+  tenth: "Ranked 17th of 844 — National Entrance Exam",
 };
 
 export const footerContent = {
   taglines: [
-    "Software Engineering & Web Dev",
-    "Java · Spring Boot · React",
-    "Full Stack Applications",
+    "Data Science & AI Engineering",
+    "Python · PyTorch · LangChain",
+    "NLP & Multi-Agent Systems",
   ],
-  credential: "B.Tech CSE · CGPA 8.35",
-  copyright: `© ${new Date().getFullYear()} Md Yusuf | Built with React`,
+  credential: "Data Science & AI Engineering Student — ENP Algiers",
+  copyright: `© ${new Date().getFullYear()} Lotfi Djebbar | Built with React`,
 };
 
 // EmailJS Configuration

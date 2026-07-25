@@ -1,4 +1,3 @@
-import React from 'react';
 import { leadershipList } from '../data/portfolioData';
 
 const LeadershipItem = ({ item, index }) => {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { internshipsList } from '../data/portfolioData';
 
 const InternshipCard = ({ intern, index }) => (

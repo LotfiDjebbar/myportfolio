@@ -27,3 +27,6 @@ dist-ssr
 .env
 .env.local
 .env.*.local
+
+# Personal source assets (resume, raw hero video/image, certificates) - not for the public repo
+/Portfolio Assets/

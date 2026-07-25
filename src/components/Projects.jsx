@@ -1,4 +1,3 @@
-import React from 'react';
 import { projects, socialLinks } from '../data/portfolioData';
 
 const GitHubIcon = () => (
