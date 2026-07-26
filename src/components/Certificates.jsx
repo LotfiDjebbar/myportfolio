@@ -1,13 +1,28 @@
 import { certificates } from '../data/portfolioData';
 
+const iconPaths = {
+  academic: "M22 10L12 5 2 10l10 5 10-5zM6 12v5c0 1.5 2.5 3 6 3s6-1.5 6-3v-5",
+  chip: "M8 3v2M16 3v2M8 19v2M16 19v2M3 8h2M3 16h2M19 8h2M19 16h2M7 7h10v10H7z",
+  chart: "M4 20V10M11 20V4M18 20v-7",
+  clipboard: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 012-2h2a2 2 0 012 2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 12l2 2 4-4",
+};
+
+const CertIcon = ({ name }) => (
+  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+    <path d={iconPaths[name]} />
+  </svg>
+);
+
 const CertificateCard = ({ cert, aosDelay }) => (
-  <div 
+  <div
     data-aos="zoom-in"
     data-aos-delay={aosDelay}
     className="bg-black/20 backdrop-blur-sm rounded-2xl p-5 border border-white/10 hover:border-white/25 hover:scale-105 hover:shadow-[0_15px_40px_rgba(0,0,0,0.3)] transition-all duration-500 cursor-default group"
   >
     <div className="flex items-start gap-4">
-      <span className="text-2xl mt-0.5 group-hover:scale-110 transition-transform duration-300">{cert.icon}</span>
+      <span className="mt-0.5 text-white/80 group-hover:scale-110 group-hover:text-white transition-all duration-300">
+        <CertIcon name={cert.icon} />
+      </span>
       <div>
         <h3 className="text-white font-bold text-sm md:text-base leading-tight mb-1 group-hover:text-white transition-colors">
           {cert.name}

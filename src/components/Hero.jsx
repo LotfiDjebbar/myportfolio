@@ -95,7 +95,7 @@ const Hero = () => {
             data-aos="fade-up"
             className="text-white text-3xl md:text-5xl font-bold mb-4 tracking-tight"
           >
-            {heroContent.greeting}, <br /> <span className="text-transparent [-webkit-text-stroke:1.5px_black]">{heroContent.titleHighlight}</span>
+            {heroContent.greeting}, <br /> <span className="text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.65)]">{heroContent.titleHighlight}</span>
           </h1>
 
           {/* Subheading */}

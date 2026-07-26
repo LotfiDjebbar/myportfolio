@@ -196,7 +196,10 @@ const Contact = () => {
                       </span>
                     ) : status === 'success' ? (
                       <span className="flex items-center gap-2">
-                        Sent Successfully ✓
+                        Sent Successfully
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                          <path d="M20 6L9 17l-5-5" />
+                        </svg>
                       </span>
                     ) : status === 'error' ? (
                       <span className="flex items-center gap-2">

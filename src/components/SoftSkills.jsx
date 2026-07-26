@@ -1,14 +1,31 @@
 import { softSkillsList } from '../data/portfolioData';
 
+const iconPaths = {
+  writing: "M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z",
+  globe: "M12 21a9 9 0 100-18 9 9 0 000 18zM3.6 9h16.8M3.6 15h16.8M12 3a13.5 13.5 0 010 18M12 3a13.5 13.5 0 000 18",
+  puzzle: "M14 3v2.5a1.5 1.5 0 003 0V3h3v3h-2.5a1.5 1.5 0 000 3H20v3h-2.5a1.5 1.5 0 000 3H20v3h-3v-2.5a1.5 1.5 0 00-3 0V21H9v-3H6.5a1.5 1.5 0 010-3H9v-3H6.5a1.5 1.5 0 010-3H9V6h3V3.5a1.5 1.5 0 012 0",
+  flag: "M5 21V4m0 0h11l-1.5 4L16 12H5",
+  refresh: "M4 4v5h5M20 20v-5h-5M5.5 9a7 7 0 0112.4-2.5M18.5 15a7 7 0 01-12.4 2.5",
+  chat: "M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z",
+  search: "M11 19a8 8 0 100-16 8 8 0 000 16zM21 21l-4.35-4.35",
+  clock: "M12 21a9 9 0 100-18 9 9 0 000 18zM12 7v5l3.5 2",
+};
+
+const SkillIcon = ({ name }) => (
+  <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+    <path d={iconPaths[name]} />
+  </svg>
+);
+
 const SoftSkillCard = ({ skill, index }) => (
-  <div 
+  <div
     data-aos="fade-up"
     data-aos-delay={index * 100}
     className="bg-[#f8f8f8] border border-gray-200 rounded-3xl p-6 hover:scale-[1.03] hover:bg-white hover:border-[#ff2a2a]/30 hover:shadow-[0_20px_45px_rgba(255,42,42,0.08)] transition-all duration-500 group flex flex-col items-center text-center justify-between min-h-[220px]"
   >
     <div className="flex flex-col items-center">
-      <div className="text-4xl mb-4 p-3 bg-gray-100 rounded-2xl group-hover:bg-[#ff2a2a]/10 group-hover:scale-110 transition-all duration-300">
-        {skill.icon}
+      <div className="mb-4 p-3 bg-gray-100 rounded-2xl text-[#ff2a2a] group-hover:bg-[#ff2a2a]/10 group-hover:scale-110 transition-all duration-300">
+        <SkillIcon name={skill.icon} />
       </div>
       <h3 className="text-gray-900 text-lg font-black tracking-tight mb-2 uppercase">
         {skill.name}

@@ -157,21 +157,21 @@ export const internshipsList = [
 
 // Soft Skills Data
 export const softSkillsList = [
-  { name: "Research & Writing", icon: "📝", desc: "Authoring rigorous technical reports — from a 40-page production RAG deliverable to a 4-page research-style NLP paper." },
-  { name: "Cross-Cultural Collaboration", icon: "🌍", desc: "Working across a 5-university international program spanning Ukraine, the US, India, and Algeria." },
-  { name: "Problem Solving", icon: "🧩", desc: "Auditing datasets, catching annotation errors, and rejecting flawed corpora before they compromise a model." },
-  { name: "Leadership", icon: "👑", desc: "Coordinating logistics and communication for large-scale student competitions and events." },
-  { name: "Adaptability", icon: "🌟", desc: "Moving fluidly between low-level model implementation and high-level agent orchestration frameworks." },
-  { name: "Communication", icon: "💬", desc: "Fluent in Arabic, French, and professional English; comfortable presenting technical work to varied audiences." },
-  { name: "Analytical Rigor", icon: "🔍", desc: "Quantitative auditing and manual re-annotation to validate results before trusting them." },
-  { name: "Time Management", icon: "⏰", desc: "Balancing a demanding engineering curriculum with a work-study role and independent research projects." }
+  { name: "Research & Writing", icon: "writing", desc: "Authoring rigorous technical reports — from a 40-page production RAG deliverable to a 4-page research-style NLP paper." },
+  { name: "Cross-Cultural Collaboration", icon: "globe", desc: "Working across a 5-university international program spanning Ukraine, the US, India, and Algeria." },
+  { name: "Problem Solving", icon: "puzzle", desc: "Auditing datasets, catching annotation errors, and rejecting flawed corpora before they compromise a model." },
+  { name: "Leadership", icon: "flag", desc: "Coordinating logistics and communication for large-scale student competitions and events." },
+  { name: "Adaptability", icon: "refresh", desc: "Moving fluidly between low-level model implementation and high-level agent orchestration frameworks." },
+  { name: "Communication", icon: "chat", desc: "Fluent in Arabic, French, and professional English; comfortable presenting technical work to varied audiences." },
+  { name: "Analytical Rigor", icon: "search", desc: "Quantitative auditing and manual re-annotation to validate results before trusting them." },
+  { name: "Time Management", icon: "clock", desc: "Balancing a demanding engineering curriculum with a work-study role and independent research projects." }
 ];
 
 export const projects = [
   {
     id: "cetelex-rag",
     number: "01",
-    badge: "🚀 Production System",
+    badge: "Production System",
     title: "Multi-Agent RAG for Odoo ERP",
     description:
       "Designed and deployed to production a multi-agent RAG system enabling natural-language querying of an Odoo 18 ERP at CETELEX Technology. Semantic matching pipeline (cosine similarity + threshold) routes queries between direct SQL template execution and LLM fallback (Qwen2.5 via Ollama), with vector storage via pgvector/PostgreSQL. Achieved 100% execution rate with P50 latency of 0.03s on a CPU-only production VPS.",
@@ -208,7 +208,7 @@ export const projects = [
   {
     id: "agrodatainsight",
     number: "04",
-    badge: "🏆 2nd Place",
+    badge: "2nd Place",
     title: "AgriDataInsight",
     description:
       "A data-driven solution for the agricultural sector, built under time constraints for Hackathon Algeria 2.0, placing 2nd overall.",
@@ -225,22 +225,22 @@ export const certificates = {
     {
       name: "Foundations of NLP — COIL Certificate of Distinction",
       issuer: "Taras Shevchenko Univ. Kyiv & Partners",
-      icon: "🧠",
+      icon: "academic",
     },
     {
       name: "Prompt Engineering with LLaMA-2",
       issuer: "iXL Consulting",
-      icon: "🤖",
+      icon: "chip",
     },
     {
       name: "AI Fundamentals",
       issuer: "DataCamp",
-      icon: "📊",
+      icon: "chart",
     },
     {
       name: "Project & Process Management",
       issuer: "Coursera",
-      icon: "📋",
+      icon: "clipboard",
     },
   ],
   viewAllUrl: "https://linkedin.com/in/lotfi-djebbar",
