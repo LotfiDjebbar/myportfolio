@@ -1,6 +1,6 @@
-import { internshipsList } from '../data/portfolioData';
+import { useLang } from '../i18n/LanguageContext';
 
-const InternshipCard = ({ intern, index }) => (
+const InternshipCard = ({ intern, index, labels }) => (
   <div 
     data-aos="fade-up"
     data-aos-delay={index * 150}
@@ -12,7 +12,7 @@ const InternshipCard = ({ intern, index }) => (
           {intern.duration}
         </span>
         <span className="bg-white/10 text-white text-[10px] font-black tracking-widest uppercase py-1 px-3 rounded-full border border-white/15">
-          Internship
+          {intern.type}
         </span>
       </div>
       <h3 className="text-white text-2xl font-black mb-1 tracking-tight">
@@ -24,7 +24,7 @@ const InternshipCard = ({ intern, index }) => (
 
       {/* Skills gained */}
       <div className="mb-6">
-        <h4 className="text-white/60 text-xs font-bold uppercase tracking-wider mb-2">Skills Gained:</h4>
+        <h4 className="text-white/60 text-xs font-bold uppercase tracking-wider mb-2">{labels.skillsLabel}</h4>
         <ul className="text-white/90 text-sm font-medium space-y-1 pl-4 list-disc">
           {intern.skills.map((skill, i) => (
             <li key={i}>{skill}</li>
@@ -35,7 +35,7 @@ const InternshipCard = ({ intern, index }) => (
 
     {/* Technologies used */}
     <div className="pt-4 border-t border-white/10">
-      <h4 className="text-white/60 text-xs font-bold uppercase tracking-wider mb-3">Technologies:</h4>
+      <h4 className="text-white/60 text-xs font-bold uppercase tracking-wider mb-3">{labels.techLabel}</h4>
       <div className="flex flex-wrap gap-2">
         {intern.tech.map((t) => (
           <span 
@@ -51,8 +51,10 @@ const InternshipCard = ({ intern, index }) => (
 );
 
 const Internships = () => {
+  const { t } = useLang();
+  const x = t.experience;
   return (
-    <section className="bg-[#ff2a2a] pt-24 pb-32 px-6 md:px-12 w-full relative overflow-hidden font-sans">
+    <section id="experience" className="bg-[#ff2a2a] pt-24 pb-32 px-6 md:px-12 w-full relative overflow-hidden font-sans">
       
       {/* Torn paper divider at top */}
       <div className="absolute top-0 left-0 w-full pointer-events-none z-10 transform -translate-y-[1px] rotate-180">
@@ -66,17 +68,17 @@ const Internships = () => {
         {/* Header */}
         <div data-aos="fade-up" className="mb-16 md:mb-20 text-center">
           <h2 className="text-4xl md:text-5xl font-black text-black mb-4 tracking-tight uppercase">
-            Work Experience
+            {x.heading}
           </h2>
           <p className="text-red-100 text-base md:text-lg font-semibold max-w-lg mx-auto">
-            Practical internships where I applied engineering principles and built real-world assets.
+            {x.description}
           </p>
         </div>
 
         {/* Internship Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
-          {internshipsList.map((intern, index) => (
-            <InternshipCard key={intern.organization} intern={intern} index={index} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          {x.list.map((intern, index) => (
+            <InternshipCard key={intern.organization} intern={intern} index={index} labels={x} />
           ))}
         </div>
 

@@ -2,9 +2,12 @@ import { useRef, useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import heroVideo from '../assets/hero video/lotfi-hero.mp4';
-import { heroContent, socialLinks } from '../data/portfolioData';
+import { personalInfo, socialLinks } from '../data/portfolioData';
+import { useLang } from '../i18n/LanguageContext';
 
 const Hero = () => {
+  const { t, lang } = useLang();
+  const heroContent = t.hero;
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const isMuted = false;
@@ -32,7 +35,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-black">
+    <section id="home" className="relative w-full h-screen overflow-hidden bg-black">
       {/* Background Video */}
       <video
         ref={videoRef}
@@ -115,30 +118,30 @@ const Hero = () => {
           >
             {/* Primary Button */}
             <a 
-              href={heroContent.ctaPrimary.href}
+              href="#projects"
               className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-md"
             >
-              {heroContent.ctaPrimary.text}
+              {heroContent.ctaPrimary}
             </a>
             
             {/* Secondary Button - Glassmorphism style */}
             <a 
-              href={heroContent.ctaSecondary.href}
+              href="#contact"
               className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-black/40 border border-white text-white font-semibold hover:bg-black/60 transition-all duration-300 backdrop-blur-md"
             >
-              {heroContent.ctaSecondary.text}
+              {heroContent.ctaSecondary}
             </a>
 
             {/* Resume Download Button */}
             <a 
-              href={heroContent.ctaResume.href}
+              href={personalInfo.resumeUrls[lang]}
               download
               className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-transparent border border-white/50 text-white font-semibold hover:bg-white hover:text-black transition-all duration-300 backdrop-blur-md flex items-center gap-2"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
-              {heroContent.ctaResume.text}
+              {heroContent.ctaResume}
             </a>
           </div>
         </div>
@@ -164,7 +167,7 @@ const Hero = () => {
             )}
           </div>
           <span className="text-white text-[10px] md:text-xs font-bold tracking-widest uppercase opacity-70 group-hover:opacity-100 transition-opacity">
-            {!isPlaying || isMuted ? "Play Reel" : "Pause"}
+            {!isPlaying || isMuted ? heroContent.playReel : heroContent.pause}
           </span>
         </div>
       </div>

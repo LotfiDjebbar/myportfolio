@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { motion, useScroll, useSpring, useMotionValueEvent } from 'framer-motion';
-import { skillsContent } from '../data/portfolioData';
+import { useLang } from '../i18n/LanguageContext';
 
 const TagCard = ({ number, title, text, className, aosDelay, aosType, pathLength, containerRef }) => {
   const ref = useRef(null);
@@ -63,6 +63,8 @@ const TagCard = ({ number, title, text, className, aosDelay, aosType, pathLength
 };
 
 const Services = () => {
+  const { t } = useLang();
+  const skillsContent = t.process;
   const containerRef = useRef(null);
   
   const { scrollYProgress } = useScroll({

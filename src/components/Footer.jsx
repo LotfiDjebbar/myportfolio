@@ -1,6 +1,9 @@
-import { personalInfo, socialLinks, footerContent } from '../data/portfolioData';
+import { personalInfo, socialLinks } from '../data/portfolioData';
+import { useLang } from '../i18n/LanguageContext';
 
 const Footer = () => {
+  const { t } = useLang();
+  const footerContent = t.footer;
   return (
     <footer className="bg-[#111111] text-[#d4d4d4] py-16 px-6 md:px-12 w-full font-mono text-[10px] md:text-xs tracking-widest flex flex-col justify-between min-h-[50vh]">
       
@@ -14,11 +17,11 @@ const Footer = () => {
         
         <div className="flex flex-col gap-1 md:items-center">
           <p>{footerContent.credential}</p>
-          <a href="#projects" className="underline hover:text-white transition-colors mt-1 underline-offset-4 decoration-1">View Work</a>
+          <a href="#projects" className="underline hover:text-white transition-colors mt-1 underline-offset-4 decoration-1">{footerContent.viewWork}</a>
         </div>
         
         <div className="flex flex-col gap-1 md:items-end">
-          <p>Available for opportunities</p>
+          <p>{footerContent.available}</p>
           <p>{new Date().getFullYear()}</p>
         </div>
       </div>
@@ -33,9 +36,9 @@ const Footer = () => {
       {/* Bottom Row */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 w-full items-end font-medium">
         <div className="flex flex-col gap-6">
-          <a href="#contact" className="underline hover:text-white transition-colors underline-offset-4 decoration-1 font-bold">Contact</a>
+          <a href="#contact" className="underline hover:text-white transition-colors underline-offset-4 decoration-1 font-bold">{footerContent.contact}</a>
           <p className="text-white/60 font-mono text-[9px] md:text-[10px]">
-            {footerContent.copyright}
+            © {new Date().getFullYear()} {personalInfo.name} | {footerContent.builtWith}
           </p>
         </div>
         
@@ -43,6 +46,13 @@ const Footer = () => {
           <a href={`mailto:${personalInfo.emails.primary}`} className="underline hover:text-white transition-colors underline-offset-4 decoration-1 lowercase">
             {personalInfo.emails.primary}
           </a>
+          <p className="flex flex-col md:items-center gap-1">
+            {personalInfo.phones.map((phone) => (
+              <a key={phone} href={`tel:${phone.replace(/\s/g, '')}`} className="hover:text-white transition-colors">
+                {phone}
+              </a>
+            ))}
+          </p>
           {/* Social Links */}
           <div className="flex items-center gap-4 mt-2">
             {/* GitHub */}
@@ -79,7 +89,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="underline hover:text-white transition-colors underline-offset-4 decoration-1"
           >
-            Explore My GitHub
+            {footerContent.explore}
           </a>
         </div>
       </div>

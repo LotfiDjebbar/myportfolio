@@ -1,4 +1,4 @@
-import { technicalSkills } from '../data/portfolioData';
+import { useLang } from '../i18n/LanguageContext';
 
 const SkillProgress = ({ name, level }) => (
   <div className="mb-4">
@@ -33,6 +33,8 @@ const SkillCard = ({ category, index }) => (
 );
 
 const TechnicalSkills = () => {
+  const { t } = useLang();
+  const technicalSkills = t.technicalSkills;
   return (
     <section id="skills" className="bg-[#0a0a0a] pt-24 pb-28 px-6 md:px-12 w-full relative overflow-hidden font-sans">
       {/* Background visual elements */}
@@ -44,18 +46,18 @@ const TechnicalSkills = () => {
         {/* Header */}
         <div data-aos="fade-up" className="mb-16 text-center">
           <div className="inline-block border border-white/20 rounded-full px-5 py-1.5 text-sm text-white/60 font-bold mb-6 shadow-sm bg-white/5 backdrop-blur-sm">
-            Technical Stack
+            {technicalSkills.badge}
           </div>
           <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight mb-4 uppercase">
-            My Skillset
+            {technicalSkills.heading}
           </h2>
           <p className="text-white/50 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
-            A comprehensive overview of my programming languages, frameworks, databases, and engineering concepts.
+            {technicalSkills.description}
           </p>
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {technicalSkills.categories.map((category, index) => (
             <SkillCard key={category.title} category={category} index={index} />
           ))}

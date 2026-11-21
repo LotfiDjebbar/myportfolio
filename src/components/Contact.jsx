@@ -1,8 +1,11 @@
 import { useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { emailjsConfig, personalInfo } from '../data/portfolioData';
+import { useLang } from '../i18n/LanguageContext';
 
 const Contact = () => {
+  const { t } = useLang();
+  const c = t.contact;
   const ref = useRef(null);
   const formRef = useRef(null);
   const [status, setStatus] = useState('idle'); // idle, sending, success, error
@@ -44,8 +47,8 @@ const Contact = () => {
       emailjsConfig.publicKey !== 'YOUR_EMAILJS_PUBLIC_KEY';
 
     if (!isConfigured) {
-      // EmailJS not configured — fallback to prefilled mailto
-      const mailtoLink = `mailto:${personalInfo.emails.primary}?subject=Portfolio Contact from ${firstName} ${lastName}&body=${encodeURIComponent(`From: ${firstName} ${lastName}\nEmail: ${email}\n\n${message}`)}`;
+      // EmailJS not configured: fallback to prefilled mailto
+      const mailtoLink = `mailto:${personalInfo.emails.primary}?subject=${encodeURIComponent(`${c.mailSubject} ${firstName} ${lastName}`)}&body=${encodeURIComponent(`From: ${firstName} ${lastName}\nEmail: ${email}\n\n${message}`)}`;
       window.open(mailtoLink, '_blank');
       setStatus('success');
       formRef.current.reset();
@@ -83,7 +86,7 @@ const Contact = () => {
           className="text-[25vw] leading-[0.75] font-black text-white uppercase tracking-tighter select-none scale-y-[1.6] origin-top"
           style={{ fontFamily: "'Impact', 'Arial Black', sans-serif" }}
         >
-          Contact
+          {c.bigWord}
         </h1>
       </motion.div>
 
@@ -95,7 +98,7 @@ const Contact = () => {
         >
           <div className="flex flex-col sm:flex-row justify-between items-start gap-8 mb-12">
             <div className="text-xs font-bold tracking-[0.2em] uppercase opacity-90">
-              Reach Me
+              {c.reachMe}
             </div>
           </div>
 
@@ -108,7 +111,7 @@ const Contact = () => {
                     type="text" 
                     id="firstName" 
                     name="first_name"
-                    placeholder="First Name" 
+                    placeholder={c.firstName} 
                     required
                     className="w-full bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white font-medium rounded-none"
                   />
@@ -118,7 +121,7 @@ const Contact = () => {
                     type="text" 
                     id="lastName" 
                     name="last_name"
-                    placeholder="Last Name" 
+                    placeholder={c.lastName} 
                     className="w-full bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white font-medium rounded-none"
                   />
                 </div>
@@ -127,7 +130,7 @@ const Contact = () => {
                     type="email" 
                     id="email" 
                     name="user_email"
-                    placeholder="Email" 
+                    placeholder={c.email} 
                     required
                     className="w-full bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white font-medium rounded-none"
                   />
@@ -140,7 +143,7 @@ const Contact = () => {
                   <textarea 
                     id="message" 
                     name="message"
-                    placeholder="Type your message here" 
+                    placeholder={c.message} 
                     required
                     className="w-full h-full min-h-[120px] bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white font-medium resize-none rounded-none"
                   ></textarea>
@@ -159,18 +162,18 @@ const Contact = () => {
                   style={{ accentColor: "white" }}
                 />
                 <label htmlFor="permission" className="cursor-pointer max-w-[280px] leading-snug">
-                  I give permission to contact me at this email address.
+                  {c.permission}
                 </label>
               </div>
 
               {/* Right text & button */}
               <div className="flex-1 flex flex-col gap-8 text-xs text-white/70 font-medium">
                 <p className="leading-relaxed max-w-[400px]">
-                  Your message will be sent directly to my inbox. I typically respond within 24-48 hours.
+                  {c.responseNote}
                 </p>
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-6">
                   <p className="max-w-[250px] leading-relaxed">
-                    For urgent inquiries, reach me at <a href={`mailto:${personalInfo.emails.primary}`} className="underline hover:text-white transition-colors">{personalInfo.emails.primary}</a>
+                    {c.urgent} <a href={`mailto:${personalInfo.emails.primary}`} className="underline hover:text-white transition-colors">{personalInfo.emails.primary}</a>
                   </p>
                   
                   <button 
@@ -192,20 +195,20 @@ const Contact = () => {
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                         </svg>
-                        Sending...
+                        {c.sending}
                       </span>
                     ) : status === 'success' ? (
                       <span className="flex items-center gap-2">
-                        Sent Successfully
+                        {c.sent}
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
                           <path d="M20 6L9 17l-5-5" />
                         </svg>
                       </span>
                     ) : status === 'error' ? (
                       <span className="flex items-center gap-2">
-                        Failed — Try Again
+                        {c.failed}
                       </span>
-                    ) : 'Send Message'}
+                    ) : c.send}
                     
                     {status === 'idle' && (
                       <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

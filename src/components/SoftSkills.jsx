@@ -1,4 +1,4 @@
-import { softSkillsList } from '../data/portfolioData';
+import { useLang } from '../i18n/LanguageContext';
 
 const iconPaths = {
   writing: "M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z",
@@ -38,6 +38,8 @@ const SoftSkillCard = ({ skill, index }) => (
 );
 
 const SoftSkills = () => {
+  const { t } = useLang();
+  const s = t.softSkills;
   return (
     <section className="bg-white pt-24 pb-32 px-6 md:px-12 w-full relative overflow-hidden font-sans bg-[linear-gradient(to_right,#80808006_1px,transparent_1px),linear-gradient(to_bottom,#80808006_1px,transparent_1px)] bg-[size:60px_60px]">
       
@@ -53,19 +55,19 @@ const SoftSkills = () => {
         {/* Header */}
         <div data-aos="fade-up" className="mb-16 md:mb-20 text-center">
           <div className="inline-block border border-gray-300 rounded-full px-5 py-1.5 text-sm text-gray-600 font-bold mb-6 shadow-sm bg-white">
-            Core Competencies
+            {s.badge}
           </div>
           <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tight mb-4 uppercase">
-            Professional Soft Skills
+            {s.heading}
           </h2>
           <p className="text-gray-500 text-base md:text-lg max-w-lg mx-auto leading-relaxed">
-            Essential traits that make me an effective engineer, coordinator, and communicator.
+            {s.description}
           </p>
         </div>
 
         {/* Soft Skills Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {softSkillsList.map((skill, index) => (
+          {s.list.map((skill, index) => (
             <SoftSkillCard key={skill.name} skill={skill} index={index} />
           ))}
         </div>

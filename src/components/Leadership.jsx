@@ -1,4 +1,4 @@
-import { leadershipList } from '../data/portfolioData';
+import { useLang } from '../i18n/LanguageContext';
 
 const LeadershipItem = ({ item, index }) => {
   const isEven = index % 2 === 0;
@@ -41,6 +41,8 @@ const LeadershipItem = ({ item, index }) => {
 };
 
 const Leadership = () => {
+  const { t } = useLang();
+  const l = t.leadership;
   return (
     <section className="bg-[#0a0a0a] pt-24 pb-32 px-6 md:px-12 w-full relative overflow-hidden font-sans bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:80px_80px]">
       
@@ -56,13 +58,13 @@ const Leadership = () => {
         {/* Header */}
         <div data-aos="fade-up" className="mb-20 text-center">
           <div className="inline-block border border-white/20 rounded-full px-5 py-1.5 text-sm text-white/60 font-bold mb-6 shadow-sm bg-white/5 backdrop-blur-sm">
-            Activities
+            {l.badge}
           </div>
           <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight mb-4 uppercase">
-            Leadership & Engagement
+            {l.heading}
           </h2>
           <p className="text-white/50 text-base md:text-lg max-w-lg mx-auto leading-relaxed">
-            Coordinating events, leading team operations, and participating in tech summits.
+            {l.description}
           </p>
         </div>
 
@@ -73,7 +75,7 @@ const Leadership = () => {
 
           {/* Timeline Items */}
           <div className="w-full">
-            {leadershipList.map((item, index) => (
+            {l.list.map((item, index) => (
               <LeadershipItem key={item.title} item={item} index={index} />
             ))}
           </div>

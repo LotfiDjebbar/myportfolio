@@ -1,5 +1,6 @@
 import stackImage from '../assets/about/lotfi-avatar.png';
-import { aboutContent } from '../data/portfolioData';
+import { personalInfo } from '../data/portfolioData';
+import { useLang } from '../i18n/LanguageContext';
 
 // Tech stack badges rendered inline for crisp rendering
 const PythonIcon = () => (
@@ -37,6 +38,8 @@ const LangChainIcon = () => (
 );
 
 const About = () => {
+  const { t } = useLang();
+  const aboutContent = t.about;
   return (
     <section id="about" className="bg-[#ff2a2a] pt-20 pb-40 px-6 md:px-12 w-full relative overflow-hidden font-sans">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-start">
@@ -60,7 +63,7 @@ const About = () => {
               <div className="w-full aspect-[3/4] overflow-hidden rounded-xl bg-gray-800 border-2 border-transparent">
                 <img
                   src={stackImage}
-                  alt="Lotfi Djebbar — Data Science & AI Engineer"
+                  alt={aboutContent.avatarAlt}
                   className="w-full h-full object-cover object-top"
                 />
               </div>
@@ -73,10 +76,31 @@ const About = () => {
         <div data-aos="fade-left" data-aos-delay="200" className="flex-1 text-white mt-8 md:mt-0 relative z-20">
           
           <h2 className="text-4xl md:text-5xl font-black text-black mb-4">{aboutContent.heading}</h2>
-          <p 
-            className="text-lg font-bold mb-12 leading-relaxed max-w-3xl text-red-50"
-            dangerouslySetInnerHTML={{ __html: aboutContent.bio }}
-          />
+          <p className="text-lg font-bold mb-8 leading-relaxed max-w-3xl text-red-50">
+            {aboutContent.bioIntro}
+            <span className="text-black text-xl font-black mx-1 tracking-wide uppercase">{personalInfo.name}</span>,{' '}
+            {aboutContent.bio}
+          </p>
+
+          {/* Goals */}
+          <ul className="space-y-3 mb-10 max-w-3xl">
+            {aboutContent.goals.map((goal) => (
+              <li key={goal} className="flex items-start gap-3 text-white font-semibold">
+                <span className="mt-1.5 w-2.5 h-2.5 rounded-full bg-black shrink-0" />
+                {goal}
+              </li>
+            ))}
+          </ul>
+
+          {/* Key figures */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mb-10">
+            {aboutContent.stats.map((stat) => (
+              <div key={stat.label} className="bg-black/15 border border-white/20 rounded-2xl px-5 py-4 backdrop-blur-sm">
+                <div className="text-2xl md:text-3xl font-black text-white">{stat.value}</div>
+                <div className="text-xs font-bold uppercase tracking-wider text-red-100 mt-1">{stat.label}</div>
+              </div>
+            ))}
+          </div>
 
           {/* Horizontal Skills Row */}
           <div className="flex items-center gap-10 mt-8">

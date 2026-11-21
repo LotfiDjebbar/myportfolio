@@ -1,9 +1,11 @@
-import { certificates } from '../data/portfolioData';
+import { socialLinks } from '../data/portfolioData';
+import { useLang } from '../i18n/LanguageContext';
 
 const iconPaths = {
   academic: "M22 10L12 5 2 10l10 5 10-5zM6 12v5c0 1.5 2.5 3 6 3s6-1.5 6-3v-5",
   chip: "M8 3v2M16 3v2M8 19v2M16 19v2M3 8h2M3 16h2M19 8h2M19 16h2M7 7h10v10H7z",
   chart: "M4 20V10M11 20V4M18 20v-7",
+  language: "M3 5h12M9 3v2m1.05 9.5A18 18 0 016.4 9m6.1 9h7M11 21l5-10 5 10M12.75 5C11.8 10.8 8.1 15.6 3 18.1",
   clipboard: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 012-2h2a2 2 0 012 2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 12l2 2 4-4",
 };
 
@@ -36,6 +38,8 @@ const CertificateCard = ({ cert, aosDelay }) => (
 );
 
 const Certificates = () => {
+  const { t } = useLang();
+  const c = t.certificates;
   return (
     <section className="bg-[#ff2a2a] pt-20 pb-28 px-6 md:px-12 w-full relative overflow-hidden font-sans">
       
@@ -50,16 +54,16 @@ const Certificates = () => {
         {/* Header */}
         <div data-aos="fade-up" className="mb-12 md:mb-16 text-center">
           <h2 className="text-4xl md:text-5xl font-black text-black mb-4 tracking-tight">
-            Certifications
+            {c.heading}
           </h2>
           <p className="text-red-100 text-base md:text-lg font-semibold max-w-lg mx-auto">
-            Industry-recognized certifications that validate my technical expertise.
+            {c.description}
           </p>
         </div>
 
         {/* Certificate Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-12">
-          {certificates.featured.map((cert, index) => (
+          {c.list.map((cert, index) => (
             <CertificateCard 
               key={cert.name} 
               cert={cert} 
@@ -71,7 +75,7 @@ const Certificates = () => {
         {/* View All Certificates CTA */}
         <div data-aos="fade-up" data-aos-delay="700" className="flex justify-center">
           <a
-            href={certificates.viewAllUrl}
+            href={socialLinks.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 px-8 py-3.5 rounded-full bg-white text-black font-bold text-base hover:bg-gray-100 hover:scale-105 hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)] transition-all duration-300 group"
@@ -79,7 +83,7 @@ const Certificates = () => {
             <svg className="w-5 h-5 text-[#ff2a2a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
-            View All Certificates
+            {c.viewAll}
             <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
